@@ -40,7 +40,7 @@ class _PageOneState extends State<PageOne> {
       symbol: '', // No symbol for currency, you can change if you want to display INR symbol
       customPattern: '#,##,##0', // Pattern for Indian currency
     );
-    return currencyFormatter.format(value);
+    return currencyFormatter.format(value.floor());
   }
 
   @override
@@ -157,7 +157,7 @@ class _PageOneState extends State<PageOne> {
                       _apiData!.key1Text,
                       formatIndianCurrency(_value),
                       _apiData!.repay,
-                      _apiData!.recommandation, // Format the value in Indian currency style
+                      _apiData!.recommendation, // Format the value in Indian currency style
                     );
                   },
                   child: Container(
